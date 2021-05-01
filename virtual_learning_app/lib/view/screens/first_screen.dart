@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/sign_up.dart';
+import 'package:virtuallearningapp/view/screens/auth/sign_up/sign_up.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/login/Loginscreen.dart';
 import 'package:virtuallearningapp/view/screens/student/login/Loginscreen.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
@@ -10,14 +10,15 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Container(
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Hero(
-                  tag: "yct",
-                  child: const Yctlogo(),
+                  tag: "logo",
+                  child: const Logo(),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -29,8 +30,7 @@ class FirstScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => StudentLogin()),
+                            MaterialPageRoute(builder: (context) => StudentLogin()),
                           );
                         },
                       ),
@@ -42,27 +42,23 @@ class FirstScreen extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => LecturerLogin()),
+                            MaterialPageRoute(builder: (context) => LecturerLogin()),
                           );
                         },
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Center(
-                        child: InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Signup(),
-                              )),
-                          child: Text(
-                            "Signup",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      )
+                      CustomButton(
+                        text: "SIGN UP",
+                        color: Colors.black,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignUp()),
+                          );
+                        },
+                      ),
                     ],
                   ),
                 ),

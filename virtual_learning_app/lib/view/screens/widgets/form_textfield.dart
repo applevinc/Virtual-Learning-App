@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class CustomFormField extends StatelessWidget {
   const CustomFormField({
@@ -17,9 +18,12 @@ class CustomFormField extends StatelessWidget {
       obscureText: obsureText,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(
+          fontSize: 10.0.sp,
+        ),
         border: OutlineInputBorder(),
-        fillColor: Colors.grey.shade300,
         filled: true,
+        fillColor: Color(0xffE2E2E6),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {

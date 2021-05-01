@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Yctlogo extends StatelessWidget {
-  const Yctlogo({
+class Logo extends StatelessWidget {
+  const Logo({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      "assets/images/logoyct.png",
+      "assets/images/logo.png",
       height: 200,
     );
   }

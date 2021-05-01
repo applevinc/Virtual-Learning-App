@@ -2,35 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/first_screen.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
 import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
-import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
-import 'package:sizer/sizer.dart';
-
-class Signup extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                SizedBox(height: 10.0.h),
-                Hero(
-                  tag: "yct",
-                  child: const Yctlogo(),
-                ),
-                SizedBox(height: 5.0.h),
-                Text('Sign Up'),
-                SizedBox(height: 5.0.h),
-                SignupForm(),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 class SignupForm extends StatefulWidget {
   @override
@@ -60,14 +31,13 @@ class SignupFormState extends State<SignupForm> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             CustomFormField(hintText: 'Fullname', obsureText: false),
-            SizedBox(height: 20),
-            CustomFormField(
-                hintText: 'Matric Number/Staff Number', obsureText: false),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
+            CustomFormField(hintText: 'Matric Number/Staff Number', obsureText: false),
+            SizedBox(height: 10),
             CustomFormField(hintText: 'Email', obsureText: false),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             CustomFormField(hintText: 'Password', obsureText: true),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             CustomButton(
               text: 'SIGNUP',
               onPressed: () {

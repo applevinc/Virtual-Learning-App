@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
 
 class UpdatesHorizontalListView extends StatelessWidget {
   const UpdatesHorizontalListView({
@@ -11,17 +12,15 @@ class UpdatesHorizontalListView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "UPDATES",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20, right: 10, left: 10),
+          child: HeadLineText('UPDATES'),
         ),
         Container(
-          height: 20.0.h,
+          height: 17.0.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(right: 10, left: 10),
             itemCount: 4,
             itemBuilder: (context, index) {
               return UpdateItem();
@@ -46,23 +45,20 @@ class UpdateItem extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _CourseTitle(),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
             _Message(),
             SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _TimeUpdated(),
-                SizedBox(
-                  width: 130,
-                ),
                 Icon(
                   Icons.arrow_forward,
-                  size: 20,
-                )
+                  size: 12.0.sp,
+                ),
               ],
             ),
           ],
@@ -81,7 +77,10 @@ class _TimeUpdated extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "2mins ago",
-      style: TextStyle(fontSize: 12, color: Colors.black54),
+      style: TextStyle(
+        fontSize: 12,
+        color: Colors.black54,
+      ),
     );
   }
 }
@@ -93,7 +92,12 @@ class _Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Adsfadfsdfvdfsgfdgsfgfssdfaf.\nsddafsdfdasfsdafaasdffasfdasfsda");
+    return Text(
+      "Adsfadfsdfvdfsgfdgsfgfssdfaf.\nsddafsdfdasfsdafaasdffasfdasfsda",
+      style: TextStyle(
+        fontSize: 8.0.sp,
+      ),
+    );
   }
 }
 
@@ -106,7 +110,10 @@ class _CourseTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       "COM 215 VISUAL BASIC",
-      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+      style: TextStyle(
+        fontSize: 11.0.sp,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }

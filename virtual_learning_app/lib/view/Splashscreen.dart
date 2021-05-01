@@ -34,7 +34,7 @@ class _SplashScreenState extends State<Splashscreen> {
           Center(
             child: Hero(
               tag: "yct",
-              child: const Yctlogo(),
+              child: const Logo(),
             ),
           ),
           SizedBox(height: 20),

@@ -34,9 +34,9 @@ class StudentFormState extends State<StudentForm> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             CustomFormField(hintText: 'Email', obsureText: false),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             CustomFormField(hintText: 'Password', obsureText: true),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             CustomButton(
               text: 'SUBMIT',
               onPressed: () {
