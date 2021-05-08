@@ -10,23 +10,22 @@ class UpdatesHorizontalListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 20, right: 10, left: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: HeadLineText('UPDATES'),
         ),
-        Container(
+        SizedBox(
           height: 17.0.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.only(right: 15, left: 15),
             itemCount: 4,
             itemBuilder: (context, index) {
-              return UpdateItem();
+              return UpdateItem(width: 70.0.w);
             },
           ),
-        )
+        ),
       ],
     );
   }
@@ -35,34 +34,42 @@ class UpdatesHorizontalListView extends StatelessWidget {
 class UpdateItem extends StatelessWidget {
   const UpdateItem({
     Key key,
+    this.width,
   }) : super(key: key);
+
+  final double width;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      child: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _CourseTitle(),
-            SizedBox(height: 5),
-            _Message(),
-            SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Container(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _CourseTitle(),
+          SizedBox(height: 5),
+          _Message(),
+          SizedBox(height: 5),
+          SizedBox(
+            width: width,
+            child: Row(
               children: [
                 _TimeUpdated(),
+                Spacer(),
                 Icon(
                   Icons.arrow_forward,
                   size: 12.0.sp,
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -95,7 +102,7 @@ class _Message extends StatelessWidget {
     return Text(
       "Adsfadfsdfvdfsgfdgsfgfssdfaf.\nsddafsdfdasfsdafaasdffasfdasfsda",
       style: TextStyle(
-        fontSize: 8.0.sp,
+        fontSize: 10.0.sp,
       ),
     );
   }
@@ -111,7 +118,7 @@ class _CourseTitle extends StatelessWidget {
     return Text(
       "COM 215 VISUAL BASIC",
       style: TextStyle(
-        fontSize: 11.0.sp,
+        fontSize: 13.0.sp,
         fontWeight: FontWeight.bold,
       ),
     );

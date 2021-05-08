@@ -31,15 +31,16 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          UpdatesHorizontalListView(),
-          SizedBox(
-            height: 20,
-          ),
-          News(),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            UpdatesHorizontalListView(),
+            SizedBox(height: 20),
+            News(),
+          ],
+        ),
       ),
     );
   }

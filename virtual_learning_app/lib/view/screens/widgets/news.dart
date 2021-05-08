@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/updates_horizontal_listview.dart';
+import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
+import 'package:sizer/sizer.dart';
 
 class News extends StatelessWidget {
   const News({
@@ -11,17 +13,20 @@ class News extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "NEWS",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: HeadLineText('NEWS'),
         ),
-        Container(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              UpdateItem(),
-              UpdateItem(),
-              UpdateItem(),
-              UpdateItem(),
+              UpdateItem(width: 100.0.w),
+              UpdateItem(width: 100.0.w),
+              UpdateItem(width: 100.0.w),
+              UpdateItem(width: 100.0.w),
+              UpdateItem(width: 100.0.w),
+              UpdateItem(width: 100.0.w),
             ],
           ),
         )

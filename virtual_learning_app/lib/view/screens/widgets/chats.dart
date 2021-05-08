@@ -1,5 +1,6 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({
@@ -26,6 +27,8 @@ class ChatScreen extends StatelessWidget {
         ),
         Bubble(
           style: styleSomebody,
+          elevation: 0.0,
+          borderColor: Colors.transparent,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,8 +39,7 @@ class ChatScreen extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              const Text(
-                  'Hi Johnson. Sorry to bother you. I have a queston for you.'),
+              const Text('Hi Johnson. Sorry to bother you. I have a queston for you.'),
             ],
           ),
         ),
@@ -105,7 +107,6 @@ class ChatScreen extends StatelessWidget {
             ],
           ),
         ),
-      
       ],
     );
   }

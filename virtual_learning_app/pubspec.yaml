@@ -31,8 +31,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   bubble: ^1.2.1
   sizer: ^2.0.11
+  provider: ^5.0.0
 
-  google_nav_bar: ^5.0.3
 
 dev_dependencies:
   flutter_test:

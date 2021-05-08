@@ -11,7 +11,7 @@ class CourseContentCard extends StatelessWidget {
       width: double.infinity,
       height: 150,
       child: Card(
-        margin: EdgeInsets.all(10),
+        //margin: EdgeInsets.all(10),
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(10.0),

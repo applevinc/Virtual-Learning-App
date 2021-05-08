@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virtuallearningapp/view/theme/colors.dart';
 
 class Conversationentrybox extends StatelessWidget {
   const Conversationentrybox({
@@ -13,7 +14,13 @@ class Conversationentrybox extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, bottom: 10, top: 10),
         height: 60,
         width: double.infinity,
-        color: Colors.white,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(5),
+            topRight: Radius.circular(5),
+          ),
+        ),
         child: Row(
           children: <Widget>[
             _AddFile(),
@@ -46,7 +53,7 @@ class _Send extends StatelessWidget {
         color: Colors.white,
         size: 18,
       ),
-      backgroundColor: Colors.orange,
+      backgroundColor: AppColor.red,
       elevation: 0,
     );
   }
@@ -84,7 +91,7 @@ class _AddFile extends StatelessWidget {
         height: 30,
         width: 30,
         decoration: BoxDecoration(
-          color: Colors.orange,
+          color: AppColor.red,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Icon(

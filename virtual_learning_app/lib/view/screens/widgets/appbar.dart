@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
       color: AppColor.red,
       height: 20.0.h,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+        padding: const EdgeInsets.only(left: 20, bottom: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -45,7 +45,7 @@ class CustomAppBar extends StatelessWidget {
                   departmentname,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 12,
+                    fontSize: 10.0.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -96,7 +96,7 @@ class _CurrentCourse extends StatelessWidget {
             'CSC312',
             style: TextStyle(
               color: Colors.white,
-              fontSize: 12,
+              fontSize: 10.0.sp,
               fontWeight: FontWeight.bold,
             ),
           ),

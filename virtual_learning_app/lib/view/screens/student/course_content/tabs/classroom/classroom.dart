@@ -7,7 +7,6 @@ class StudentClassroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade400,
       body: _Body(),
     );
   }

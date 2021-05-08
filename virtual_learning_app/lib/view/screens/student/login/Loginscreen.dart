@@ -20,7 +20,10 @@ class StudentLogin extends StatelessWidget {
                   child: const Logo(),
                 ),
                 SizedBox(height: 10),
-                HeadLineText('Login as a Student'),
+                HeadLineText(
+                  'Login as a Student',
+                  alignment: Alignment.center,
+                ),
                 SizedBox(height: 10),
                 StudentForm(),
               ],

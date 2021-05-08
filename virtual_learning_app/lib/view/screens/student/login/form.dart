@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar.dart';
 import 'package:virtuallearningapp/view/screens/student/course_content/course_content.dart';
-import 'package:virtuallearningapp/view/screens/student/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/dashboard.dart';
 import 'package:virtuallearningapp/view/screens/student/profile/profile.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
