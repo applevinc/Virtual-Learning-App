@@ -5,7 +5,7 @@ class WeeklyCourseContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       children: [
         CourseContentCard(),
         CourseContentCard(),

@@ -51,6 +51,7 @@ class _StudentCourseContentState extends State<StudentCourseContent>
         child: CustomAppBar(
           username: "Appleyard Vincent",
           departmentname: "Department of Physics",
+          automaticallyImplyLeading: true,
           bottom: TabBar(
             controller: _controller,
             indicatorColor: Colors.white,

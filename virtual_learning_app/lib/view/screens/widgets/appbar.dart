@@ -8,23 +8,29 @@ class CustomAppBar extends StatelessWidget {
     this.departmentname,
     this.visible = false,
     this.bottom,
+    this.course = '',
+    this.automaticallyImplyLeading = false,
   });
 
   final String username;
   final String departmentname;
+  final String course;
   final bool visible;
   final PreferredSizeWidget bottom;
+  final bool automaticallyImplyLeading;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColor.red,
       elevation: 0.0,
-      automaticallyImplyLeading: false,
+      automaticallyImplyLeading: automaticallyImplyLeading,
+      leadingWidth: 10.0.w,
       toolbarHeight: 100,
       title: _Title(
         username: username,
         departmentname: departmentname,
+        course: course,
         visible: visible,
       ),
       bottom: bottom,
@@ -38,10 +44,12 @@ class _Title extends StatelessWidget {
     @required this.username,
     @required this.departmentname,
     @required this.visible,
+    this.course,
   }) : super(key: key);
 
   final String username;
   final String departmentname;
+  final String course;
   final bool visible;
 
   @override
@@ -77,7 +85,10 @@ class _Title extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              _CurrentCourse(showWidget: visible),
+              _CurrentCourse(
+                course: course,
+                showWidget: visible,
+              ),
             ],
           ),
         ],
@@ -90,9 +101,11 @@ class _CurrentCourse extends StatelessWidget {
   const _CurrentCourse({
     Key key,
     this.showWidget,
+    this.course,
   }) : super(key: key);
 
   final bool showWidget;
+  final String course;
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +133,7 @@ class _CurrentCourse extends StatelessWidget {
           ),
           SizedBox(width: 3),
           Text(
-            'CSC312',
+            course.toUpperCase(),
             style: TextStyle(
               color: Colors.white,
               fontSize: 10.0.sp,

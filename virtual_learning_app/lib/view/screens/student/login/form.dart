@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar.dart';
-import 'package:virtuallearningapp/view/screens/student/course_content/course_content.dart';
+import 'package:virtuallearningapp/view/screens/student/courses/Coursesscreen.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/dashboard.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
 import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
@@ -50,7 +50,7 @@ class StudentFormState extends State<StudentForm> {
                       builder: (context) => BottomNavBar(
                         pages: [
                           StudentDashboard(),
-                          StudentCourseContent(),
+                          CoursesScreen(),
                         ],
                       ),
                     ),

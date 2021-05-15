@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/student/course_content/course_content.dart';
+import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
+import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:sizer/sizer.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -8,21 +11,24 @@ class CourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: InkWell(
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => StudentCourseContent(),
-          ),
+    return InkWell(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => StudentCourseContent(),
         ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Card(
-          color: Colors.grey.shade300,
+          color: AppColor.red,
+          elevation: 0.0,
           child: Column(
             children: [
               Icon(
                 Icons.school,
-                size: 150,
+                size: 15.0.h,
+                color: Colors.white,
               ),
               Container(
                 color: Colors.white,
@@ -31,10 +37,7 @@ class CourseCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "COM 215 VISUAL BASIC",
-                        style: TextStyle(fontSize: 20),
-                      ),
+                      HeadLineText('COM 215 VISUAL BASIC'),
                       Icon(Icons.arrow_forward)
                     ],
                   ),

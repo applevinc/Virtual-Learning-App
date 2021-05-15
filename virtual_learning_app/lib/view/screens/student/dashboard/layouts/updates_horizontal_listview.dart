@@ -12,14 +12,14 @@ class UpdatesHorizontalListView extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: HeadLineText('UPDATES'),
         ),
         SizedBox(
           height: 17.0.h,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(right: 15, left: 15),
+            padding: const EdgeInsets.only(right: 10, left: 10),
             itemCount: 4,
             itemBuilder: (context, index) {
               return UpdateItem(width: 70.0.w);
