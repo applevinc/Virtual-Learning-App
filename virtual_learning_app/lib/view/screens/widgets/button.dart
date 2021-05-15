@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
-// ignore: must_be_immutable
 class CustomButton extends StatelessWidget {
   CustomButton({
     this.text,
@@ -10,7 +10,7 @@ class CustomButton extends StatelessWidget {
 
   final String text;
   final Function onPressed;
-  Color color;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       color: color,
       elevation: 0.0,
+      height: 7.0.h,
       child: Text(
         text,
         style: TextStyle(color: Colors.white),

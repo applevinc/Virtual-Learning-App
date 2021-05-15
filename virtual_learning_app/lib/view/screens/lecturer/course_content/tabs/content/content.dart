@@ -6,16 +6,15 @@ class LecturerWeeklyCourseContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
       children: [
+        AddNewContent(),
         CourseContentCard(),
         CourseContentCard(),
         CourseContentCard(),
         CourseContentCard(),
         CourseContentCard(),
-        AddNewContent()
       ],
     );
   }
 }
-

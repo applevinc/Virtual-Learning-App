@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
             title: 'Virtual Learning App',
             debugShowCheckedModeBanner: false,
             theme: CustomTheme.defaultTheme(),
+            // first screen
             home: Splashscreen(),
           ),
         );

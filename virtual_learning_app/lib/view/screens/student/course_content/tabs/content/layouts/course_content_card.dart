@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virtuallearningapp/view/screens/widgets/pdf.dart';
 
 class CourseContentCard extends StatelessWidget {
   const CourseContentCard({
@@ -20,20 +21,13 @@ class CourseContentCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "WEEK1",
+                "WEEK 1",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               Text("Introduction to computing"),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                child: Text("PDF 1.pdf"),
-              ),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                child: Text("PDF 2.pdf"),
-              ),
+              PDF(),
+              SizedBox(height: 5),
+              PDF(),
             ],
           ),
         ),

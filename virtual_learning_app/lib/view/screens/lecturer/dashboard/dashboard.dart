@@ -3,22 +3,21 @@ import 'package:virtuallearningapp/view/screens/lecturer/dashboard/layouts/assig
 import 'package:virtuallearningapp/view/screens/lecturer/dashboard/layouts/chat_updates.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:virtuallearningapp/view/screens/widgets/news.dart';
+import 'package:virtuallearningapp/view/theme/colors.dart';
 
 class LecturerDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.grey.shade400,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100),
-          child: CustomAppBar(
-            username: "Mr Ogundele",
-            departmentname: "Department Of Computer Science",
-          ),
+    return Scaffold(
+      backgroundColor: AppColor.grey,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: CustomAppBar(
+          username: "Mr Ogundele",
+          departmentname: "Department Of Computer Science",
         ),
-        body: _Body(),
       ),
+      body: _Body(),
     );
   }
 }
@@ -31,9 +30,10 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.all(10),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             ChatUpdates(),
             SizedBox(height: 20),

@@ -1,39 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/course_content/tabs/classroom/classroom.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/course_content/tabs/content/content.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
+import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
-class LecturerCourseContent extends StatelessWidget {
+class LecturerCourseContent extends StatefulWidget {
+  @override
+  _LecturerCourseContentState createState() => _LecturerCourseContentState();
+}
+
+class _LecturerCourseContentState extends State<LecturerCourseContent>
+    with SingleTickerProviderStateMixin {
+  TabController _controller;
+  int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(length: 2, vsync: this);
+
+    _controller.addListener(() {
+      setState(() {
+        _selectedIndex = _controller.index;
+      });
+
+      // when on classroom tab, remove the bottomNavBar
+      // when on content tab, show bottomNavBar
+      var bottomNavBar = context.read<BottomNavBarState>();
+      if (_selectedIndex == 1) {
+        bottomNavBar.visible(false);
+      } else {
+        bottomNavBar.visible(true);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          backgroundColor: Colors.grey.shade400,
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(150),
-            child: AppBar(
-              leading: Container(),
-              flexibleSpace: Padding(
-                padding: const EdgeInsets.only(bottom: 50),
-                child: CustomAppBar(
-                  username: "Mr Ogundele",
-                  departmentname: "Department Of Computer Science",
-                ),
-              ),
-              backgroundColor: Colors.orange,
-              bottom: TabBar(indicatorColor: Colors.white,
-                tabs: [
-                  Tab(text: 'CONTENT'),
-                  Tab(text: 'CLASSROOM'),
-                ],
-              ),
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(20.0.h),
+        child: CustomAppBar(
+          username: "Professor Adeoye",
+          departmentname: "Department of Physics",
+          bottom: TabBar(
+            controller: _controller,
+            indicatorColor: Colors.white,
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 12.0.sp,
             ),
+            tabs: [
+              Tab(text: 'CONTENT'),
+              Tab(text: 'CLASSROOM'),
+            ],
           ),
-          body: _Body(),
         ),
       ),
+      body: _Body(controller: _controller),
     );
   }
 }
@@ -41,11 +73,15 @@ class LecturerCourseContent extends StatelessWidget {
 class _Body extends StatelessWidget {
   const _Body({
     Key key,
+    this.controller,
   }) : super(key: key);
+
+  final TabController controller;
 
   @override
   Widget build(BuildContext context) {
     return TabBarView(
+      controller: controller,
       children: [
         LecturerWeeklyCourseContents(),
         LecturerClassroom(),

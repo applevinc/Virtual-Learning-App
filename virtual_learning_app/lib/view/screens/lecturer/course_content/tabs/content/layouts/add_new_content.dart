@@ -11,7 +11,7 @@ class AddNewContent extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Card(
-        margin: EdgeInsets.all(10),
+        //margin: EdgeInsets.all(10),
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -25,7 +25,12 @@ class AddNewContent extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
-                  Text("Add New Content")
+                  Text(
+                    "Add New Content",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
                 ],
               )
             ],
