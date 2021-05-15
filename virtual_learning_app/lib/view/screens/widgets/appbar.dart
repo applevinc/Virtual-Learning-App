@@ -7,7 +7,38 @@ class CustomAppBar extends StatelessWidget {
     this.username,
     this.departmentname,
     this.visible = false,
+    this.bottom,
   });
+
+  final String username;
+  final String departmentname;
+  final bool visible;
+  final PreferredSizeWidget bottom;
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: AppColor.red,
+      elevation: 0.0,
+      automaticallyImplyLeading: false,
+      toolbarHeight: 100,
+      title: _Title(
+        username: username,
+        departmentname: departmentname,
+        visible: visible,
+      ),
+      bottom: bottom,
+    );
+  }
+}
+
+class _Title extends StatelessWidget {
+  const _Title({
+    Key key,
+    @required this.username,
+    @required this.departmentname,
+    @required this.visible,
+  }) : super(key: key);
 
   final String username;
   final String departmentname;
@@ -15,45 +46,41 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColor.red,
-      height: 20.0.h,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20, bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              username,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0.sp,
-                fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, left: 5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(
+            username,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20.0.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.school,
+                size: 20,
               ),
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.school,
-                  size: 20,
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                departmentname,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 10.0.sp,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  departmentname,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 10.0.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                _CurrentCourse(showWidget: visible),
-              ],
-            ),
-          ],
-        ),
+              ),
+              _CurrentCourse(showWidget: visible),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 class BottomNavBarState extends ChangeNotifier {
   bool isVisible = true;
-  void setVisiblity(bool value) {
+  void visible(bool value) {
     isVisible = value;
     notifyListeners();
   }

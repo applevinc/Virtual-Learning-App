@@ -12,7 +12,7 @@ class StudentDashboard extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.grey,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(30.0.h),
+        preferredSize: Size.fromHeight(15.0.h),
         child: CustomAppBar(
           username: "Appleyard Vincent",
           departmentname: "Department of Physics",

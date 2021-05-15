@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:virtuallearningapp/view/screens/auth/sign_up/sign_up.dart';
-import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/login/Loginscreen.dart';
 import 'package:virtuallearningapp/view/screens/student/login/Loginscreen.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
@@ -12,12 +10,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ChangeNotifierProvider(
-        create: (context) => BottomNavBarState(),
-        builder: (context, _) {
-          return _Body();
-        },
-      ),
+      body: _Body(),
     );
   }
 }
