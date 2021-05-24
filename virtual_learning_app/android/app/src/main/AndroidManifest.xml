@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.virtual_learning_app">
    <application
-        android:label="virtual_learning_app"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Unilag Online App"
+        android:icon="@mipmap/unilag_logo">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
