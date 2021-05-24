@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/screens/student/login/form.dart';
+import 'package:virtuallearningapp/auth/views.dart';
 import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
+import 'package:sizer/sizer.dart';
 
-class StudentLogin extends StatelessWidget {
+class LecturerLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Login as a Student'),
+        title: Text('Login as a Lecturer'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -22,7 +22,7 @@ class StudentLogin extends StatelessWidget {
                 child: const Logo(),
               ),
               SizedBox(height: 20),
-              StudentForm(),
+              LoginForm(),
             ],
           ),
         ),

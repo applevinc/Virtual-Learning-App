@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class CustomFormField extends StatelessWidget {
-  const CustomFormField({
+  CustomFormField({
     Key key,
     this.hintText,
-    this.obsureText,
+    this.obsureText = false,
+    this.controller,
   }) : super(key: key);
 
   final String hintText;
   final bool obsureText;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       obscureText: obsureText,
       decoration: InputDecoration(
         hintText: hintText,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/auth/sign_up/layout/form.dart';
+import 'package:virtuallearningapp/auth/views.dart';
 import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
 
 class SignUp extends StatelessWidget {
@@ -20,7 +20,7 @@ class SignUp extends StatelessWidget {
               child: const Logo(),
             ),
             SizedBox(height: 20),
-            SignupForm(),
+            RegisterForm(),
           ],
         ),
       ),

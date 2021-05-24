@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/auth/sign_up/sign_up.dart';
-import 'package:virtuallearningapp/view/screens/lecturer/login/Loginscreen.dart';
-import 'package:virtuallearningapp/view/screens/student/login/Loginscreen.dart';
+import 'package:virtuallearningapp/view/screens/auth/lecturer.dart';
+import 'package:virtuallearningapp/view/screens/auth/sign_up.dart';
+import 'package:virtuallearningapp/view/screens/auth/student.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
 import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
 
