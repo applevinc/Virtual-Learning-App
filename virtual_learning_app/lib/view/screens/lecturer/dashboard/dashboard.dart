@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/dashboard/layouts/assignment_updates.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/dashboard/layouts/chat_updates.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
-import 'package:virtuallearningapp/view/screens/widgets/news.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
 
 class LecturerDashboard extends StatelessWidget {
@@ -36,7 +35,6 @@ class _Body extends StatelessWidget {
         SizedBox(height: 20),
         AssignmentUpdates(),
         SizedBox(height: 20),
-        News(),
       ],
     );
   }

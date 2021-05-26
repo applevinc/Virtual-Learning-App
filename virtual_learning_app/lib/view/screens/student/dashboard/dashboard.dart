@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/activities.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/updates_horizontal_listview.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
-import 'package:virtuallearningapp/view/screens/widgets/news.dart';
 import 'package:sizer/sizer.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
 
@@ -30,13 +30,17 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      children: [
-        UpdatesHorizontalListView(),
-        SizedBox(height: 20),
-        News(),
-      ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Column(
+          children: [
+            UpdatesHorizontalListView(),
+            SizedBox(height: 20),
+            ActivityGrid(),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/auth/views.dart';
+import 'package:virtuallearningapp/auth/forms.dart';
 import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
 
 class StudentLogin extends StatelessWidget {

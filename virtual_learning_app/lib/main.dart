@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/my_app.dart';
+import 'package:virtuallearningapp/view/app.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
+
