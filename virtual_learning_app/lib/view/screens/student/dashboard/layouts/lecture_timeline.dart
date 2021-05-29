@@ -4,10 +4,13 @@ import 'package:sizer/sizer.dart';
 import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
 
-class UpdatesHorizontalListView extends StatelessWidget {
-  const UpdatesHorizontalListView({
+class LectureTimeLine extends StatelessWidget {
+  const LectureTimeLine({
     Key key,
+    @required this.user,
   }) : super(key: key);
+
+  final String user;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +24,77 @@ class UpdatesHorizontalListView extends StatelessWidget {
           SizedBox(height: 10),
           SizedBox(
             height: 110,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.only(right: 10, left: 10),
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                return UpdateItem(index: index);
-              },
-            ),
+            child: (user == 'Lecturer') ? _AddEventTimeLine() : _ListViewTimeLine(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ListViewTimeLine extends StatelessWidget {
+  const _ListViewTimeLine({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.only(right: 10, left: 10),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return LectureTimeLineItem(index: index);
+      },
+    );
+  }
+}
+
+class _AddEventTimeLine extends StatelessWidget {
+  const _AddEventTimeLine({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15),
+      child: Row(
+        children: [
+          _AddEvent(),
+          Expanded(
+            child: _ListViewTimeLine(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _AddEvent extends StatelessWidget {
+  const _AddEvent({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      decoration: BoxDecoration(
+        color: AppColor.red,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.add,
+            color: Colors.white,
+            size: 30,
+          ),
+          Text(
+            'Add Event',
+            style: TextStyle(color: Colors.white),
           ),
         ],
       ),
@@ -63,8 +129,8 @@ class _HeadLine extends StatelessWidget {
   }
 }
 
-class UpdateItem extends StatelessWidget {
-  const UpdateItem({
+class LectureTimeLineItem extends StatelessWidget {
+  const LectureTimeLineItem({
     Key key,
     this.index,
   }) : super(key: key);
@@ -77,7 +143,7 @@ class UpdateItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.all(5),
+      margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
         border: Border.all(

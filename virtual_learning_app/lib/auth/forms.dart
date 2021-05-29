@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/app.dart';
 import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar.dart';
-import 'package:virtuallearningapp/view/screens/student/courses/Coursesscreen.dart';
-import 'package:virtuallearningapp/view/screens/student/dashboard/dashboard.dart';
 import 'package:virtuallearningapp/view/screens/widgets/button.dart';
 import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({Key key, this.login}) : super(key: key);
+  const LoginForm({
+    Key key,
+    this.login,
+    @required this.dashboard,
+  }) : super(key: key);
 
   final void Function({String email, String password}) login;
+  final BottomNavBar dashboard;
 
   @override
   _LoginFormState createState() => _LoginFormState();
@@ -51,14 +54,7 @@ class _LoginFormState extends State<LoginForm> {
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => BottomNavBar(
-                        pages: [
-                          StudentDashboard(),
-                          CoursesScreen(),
-                        ],
-                      ),
-                    ),
+                    MaterialPageRoute(builder: (context) => widget.dashboard),
                   );
                 }
               },

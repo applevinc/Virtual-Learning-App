@@ -5,7 +5,7 @@ class CustomButton extends StatelessWidget {
   CustomButton({
     this.text,
     this.onPressed,
-    this.color = const Color(0xffD33D2C),
+    this.color = const Color(0xffAC0C0C),
   });
 
   final String text;

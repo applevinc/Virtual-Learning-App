@@ -1,40 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
 import 'package:virtuallearningapp/view/screens/widgets/pdf.dart';
+import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:sizer/sizer.dart';
+import 'dart:math';
 
-class AssignmentUpdates extends StatelessWidget {
-  const AssignmentUpdates({
-    Key key,
-  }) : super(key: key);
+class BuildItem extends StatelessWidget {
+  const BuildItem({Key key, this.title}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: HeadLineText('assignments'),
-        ),
-        SizedBox(
-          height: 18.0.h,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            itemCount: 4,
-            itemBuilder: (context, index) {
-              return _BuildItem();
-            },
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class _BuildItem extends StatelessWidget {
-  const _BuildItem({Key key}) : super(key: key);
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +25,8 @@ class _BuildItem extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(10),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                PDF(),
+                (title == 'Chats') ? _Message() : PDF(),
                 SizedBox(height: 5),
                 _TimeReceived(),
               ],
@@ -86,6 +58,21 @@ class _TimeReceived extends StatelessWidget {
   }
 }
 
+class _Message extends StatelessWidget {
+  const _Message({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid',
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
+    );
+  }
+}
+
 class _StudentNameField extends StatelessWidget {
   const _StudentNameField({
     Key key,
@@ -93,22 +80,31 @@ class _StudentNameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List colors = [
+      AppColor.green,
+      AppColor.red,
+      AppColor.black,
+      AppColor.blue,
+      AppColor.brown,
+      AppColor.green,
+      AppColor.purple,
+    ];
+    Random random = new Random();
+    int index = random.nextInt(7);
+
     return Container(
+      alignment: Alignment.centerLeft,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: colors[index],
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(5),
           topRight: Radius.circular(5),
         ),
       ),
-      child: Row(
-        children: [
-          Text(
-            'Student A',
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
+      child: Text(
+        'Student A',
+        style: TextStyle(color: Colors.white),
       ),
     );
   }

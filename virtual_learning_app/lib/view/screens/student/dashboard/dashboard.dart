@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/activities.dart';
-import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/updates_horizontal_listview.dart';
+import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/lecture_timeline.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
@@ -35,7 +35,7 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 20),
         child: Column(
           children: [
-            UpdatesHorizontalListView(),
+            LectureTimeLine(user: 'Student'),
             SizedBox(height: 20),
             ActivityGrid(),
           ],
