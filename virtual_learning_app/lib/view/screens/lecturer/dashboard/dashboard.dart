@@ -12,8 +12,8 @@ class LecturerDashboard extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: CustomAppBar(
-          username: "Mr Ogundele",
-          departmentname: "Department Of Computer Science",
+          username: "Professor Adeoye",
+          departmentname: "Department Of Physics",
         ),
       ),
       body: _Body(),

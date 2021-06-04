@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:virtuallearningapp/view/screens/widgets/button.dart';
+import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
+import 'package:virtuallearningapp/view/screens/widgets/pdf.dart';
+import 'package:virtuallearningapp/view/theme/colors.dart';
 
 class AddNewContent extends StatelessWidget {
   const AddNewContent({
@@ -9,12 +13,27 @@ class AddNewContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      child: Card(
-        //margin: EdgeInsets.all(10),
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
+      color: Colors.white,
+      height: 90,
+      child: InkWell(
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
+            backgroundColor: Colors.white,
+            builder: (context) => _ModalBottomSheetWidget(),
+          );
+        },
+        child: Container(
+          height: 40,
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            color: AppColor.grey,
+            borderRadius: BorderRadius.circular(5),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -36,6 +55,62 @@ class AddNewContent extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _ModalBottomSheetWidget extends StatelessWidget {
+  const _ModalBottomSheetWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: 20,
+        right: 20,
+        left: 20,
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          CustomFormField(hintText: 'Topic'),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              InkWell(
+                onTap: (){
+                  // add pdf from phone storage
+                },
+                child: Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    color: AppColor.brown,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Icon(Icons.add, size: 40),
+                ),
+              ),
+              SizedBox(width: 10),
+              Expanded(child: PDF()),
+            ],
+          ),
+          SizedBox(height: 10),
+          CustomButton(
+            text: 'Add',
+            onPressed: () {
+              // add inputs to database
+
+              Navigator.pop(context);
+            },
+          ),
+          SizedBox(height: 20),
+        ],
       ),
     );
   }

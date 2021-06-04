@@ -80,7 +80,7 @@ class _Title extends StatelessWidget {
               Text(
                 departmentname,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: AppColor.grey,
                   fontSize: 10.0.sp,
                   fontWeight: FontWeight.bold,
                 ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/widgets/pdf.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
-import 'package:sizer/sizer.dart';
 import 'dart:math';
 
 class BuildItem extends StatelessWidget {
@@ -13,7 +12,7 @@ class BuildItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(5),
-      width: 70.0.w,
+      width: 300,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(5),

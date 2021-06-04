@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/dashboard/widgets/item.dart';
 import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
-import 'package:sizer/sizer.dart';
 
 class Updates extends StatelessWidget {
   const Updates(
@@ -20,7 +19,7 @@ class Updates extends StatelessWidget {
           child: HeadLineText(title),
         ),
         SizedBox(
-          height: 18.0.h,
+          height: 130,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.symmetric(horizontal: 10),

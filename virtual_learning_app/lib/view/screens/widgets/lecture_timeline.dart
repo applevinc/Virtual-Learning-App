@@ -74,7 +74,7 @@ class _AddEvent extends StatelessWidget {
           isScrollControlled: true,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
-          backgroundColor: AppColor.grey,
+          backgroundColor: Colors.white,
           builder: (BuildContext context) => _ModalBottomSheetWidget(),
         );
       },
@@ -123,7 +123,7 @@ class _ModalBottomSheetWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            CustomFormField(hintText: 'Venue'),
+            CustomFormField(hintText: 'Course Title'),
             SizedBox(height: 5),
             CustomFormField(hintText: 'Venue'),
             SizedBox(height: 5),
@@ -285,11 +285,11 @@ class LectureTimeLineItem extends StatelessWidget {
           // To display ongoing lecture on first element
           // and show upcoming for other item from index 1
           (index == 0)
-              ? _LectureUpdate(
+              ? _DotIndicator(
                   color: AppColor.green,
                   title: 'ONGOING CLASS',
                 )
-              : _LectureUpdate(
+              : _DotIndicator(
                   color: AppColor.grey,
                   title: 'UPCOMING CLASS',
                 ),
@@ -299,8 +299,8 @@ class LectureTimeLineItem extends StatelessWidget {
   }
 }
 
-class _LectureUpdate extends StatelessWidget {
-  const _LectureUpdate({Key key, this.color, this.title}) : super(key: key);
+class _DotIndicator extends StatelessWidget {
+  const _DotIndicator({Key key, this.color, this.title}) : super(key: key);
 
   final Color color;
   final String title;
@@ -310,7 +310,7 @@ class _LectureUpdate extends StatelessWidget {
     return Row(
       children: [
         Container(
-          padding: EdgeInsets.all(3.0.sp),
+          padding: EdgeInsets.all(6),
           decoration: BoxDecoration(
             color: color,
             shape: BoxShape.circle,

@@ -83,7 +83,7 @@ class _Body extends StatelessWidget {
     return TabBarView(
       controller: controller,
       children: [
-        LecturerWeeklyCourseContents(),
+        CourseContents(),
         LecturerClassroom(),
       ],
     );

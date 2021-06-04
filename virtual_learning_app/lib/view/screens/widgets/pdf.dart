@@ -11,7 +11,6 @@ class PDF extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColor.grey,
-      width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
