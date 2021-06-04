@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuallearningapp/view/screens/lecturer/dashboard/layouts/updates.dart';
-import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/lecture_timeline.dart';
+import 'package:virtuallearningapp/view/screens/widgets/lecture_timeline.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
 

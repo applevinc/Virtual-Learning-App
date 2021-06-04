@@ -28,12 +28,12 @@ class CustomFormField extends StatelessWidget {
         filled: true,
         fillColor: Color(0xffE2E2E6),
       ),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter your $hintText';
-        }
-        return null;
-      },
+      // validator: (value) {
+      //   if (value == null || value.isEmpty) {
+      //     return 'Please enter your $hintText';
+      //   }
+      //   return null;
+      // },
     );
   }
 }

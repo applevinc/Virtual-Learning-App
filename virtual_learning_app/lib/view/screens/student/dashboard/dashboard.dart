@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/activities.dart';
-import 'package:virtuallearningapp/view/screens/student/dashboard/layouts/lecture_timeline.dart';
+import 'package:virtuallearningapp/view/screens/widgets/lecture_timeline.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';

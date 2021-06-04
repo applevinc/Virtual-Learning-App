@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
+import 'package:virtuallearningapp/view/screens/widgets/button.dart';
+import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
 import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';
+
+var _now = DateTime.now();
+var _date = '${DateFormat('EE, d MMM, yyyy').format(_now)}';
+String _time = DateFormat.jm().format(_now);
+TimeOfDay _timeOfDay = TimeOfDay.now();
 
 class LectureTimeLine extends StatelessWidget {
   const LectureTimeLine({
@@ -20,7 +27,7 @@ class LectureTimeLine extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
-          _HeadLine(),
+          _TodayTime(),
           SizedBox(height: 10),
           SizedBox(
             height: 110,
@@ -28,24 +35,6 @@ class LectureTimeLine extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _ListViewTimeLine extends StatelessWidget {
-  const _ListViewTimeLine({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.only(right: 10, left: 10),
-      itemCount: 4,
-      itemBuilder: (context, index) {
-        return LectureTimeLineItem(index: index);
-      },
     );
   }
 }
@@ -78,35 +67,168 @@ class _AddEvent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      decoration: BoxDecoration(
-        color: AppColor.red,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 30,
-          ),
-          Text(
-            'Add Event',
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
+    return InkWell(
+      onTap: () {
+        showModalBottomSheet<void>(
+          context: context,
+          isScrollControlled: true,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(5))),
+          backgroundColor: AppColor.grey,
+          builder: (BuildContext context) => _ModalBottomSheetWidget(),
+        );
+      },
+      child: Container(
+        width: 100,
+        decoration: BoxDecoration(
+          color: AppColor.red,
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.add,
+              color: Colors.white,
+              size: 30,
+            ),
+            Text(
+              'Add Event',
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
 
-class _HeadLine extends StatelessWidget {
+class _ModalBottomSheetWidget extends StatelessWidget {
+  const _ModalBottomSheetWidget({
+    Key key,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    var now = DateTime.now();
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(
+          top: 20,
+          right: 20,
+          left: 20,
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            CustomFormField(hintText: 'Venue'),
+            SizedBox(height: 5),
+            CustomFormField(hintText: 'Venue'),
+            SizedBox(height: 5),
+            _SelectDateTime(),
+            SizedBox(height: 5),
+            CustomButton(
+              text: 'Submit',
+              onPressed: () {
+                // save input data to database
 
+                Navigator.pop(context);
+              },
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SelectDateTime extends StatelessWidget {
+  const _SelectDateTime({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        _SelectTime(
+          date: _date,
+          function: () => showDatePicker(
+            context: context,
+            initialDate: _now,
+            firstDate: _now,
+            lastDate: DateTime(2022, 1, 1),
+          ),
+        ),
+        SizedBox(height: 5),
+        _SelectTime(
+          date: _time,
+          function: () => showTimePicker(
+            context: context,
+            initialTime: _timeOfDay,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _SelectTime extends StatelessWidget {
+  const _SelectTime({
+    Key key,
+    @required this.function,
+    @required this.date,
+  }) : super(key: key);
+
+  final String date;
+  final Function function;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          date,
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          width: 5.0,
+        ),
+        MaterialButton(
+          elevation: 0.0,
+          color: AppColor.brown,
+          onPressed: function,
+          child: Text('Select'),
+        ),
+      ],
+    );
+  }
+}
+
+class _ListViewTimeLine extends StatelessWidget {
+  const _ListViewTimeLine({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.only(right: 10, left: 10),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return LectureTimeLineItem(index: index);
+      },
+    );
+  }
+}
+
+class _TodayTime extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
@@ -122,7 +244,7 @@ class _HeadLine extends StatelessWidget {
         SizedBox(height: 5),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: HeadLineText('${DateFormat('EE, d MMM, yyyy').format(now)}'),
+          child: HeadLineText('$_date'),
         ),
       ],
     );
