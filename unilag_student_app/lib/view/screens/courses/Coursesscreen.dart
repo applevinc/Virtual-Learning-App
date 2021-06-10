@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/student/courses/layouts/course_card.dart';
+import 'package:virtuallearningapp/view/screens/courses/layouts/course_card.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
 import 'package:virtuallearningapp/view/theme/colors.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/student/course_content/tabs/classroom/classroom.dart';
-import 'package:virtuallearningapp/view/screens/student/course_content/tabs/content/content.dart';
+import 'package:virtuallearningapp/view/screens/course_content/tabs/classroom/classroom.dart';
+import 'package:virtuallearningapp/view/screens/course_content/tabs/content/content.dart';
 import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
 
@@ -45,7 +45,7 @@ class _Body extends StatelessWidget {
     return TabBarView(
       children: [
         WeeklyCourseContents(),
-        StudentClassroom(),
+        Classroom(),
       ],
     );
   }

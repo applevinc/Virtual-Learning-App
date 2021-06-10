@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/screens/auth/lecturer.dart';
 import 'package:virtuallearningapp/view/screens/auth/sign_up.dart';
 import 'package:virtuallearningapp/view/screens/auth/student.dart';
 import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
@@ -77,18 +76,6 @@ class _Body extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => StudentLogin()),
-                      );
-                    },
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomButton(
-                    text: "LOGIN AS LECTURER",
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LecturerLogin()),
                       );
                     },
                   ),
