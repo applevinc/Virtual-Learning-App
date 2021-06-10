@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:sizer/sizer.dart';
 import 'package:unilag_lecturer_app/auth/views/login_form.dart';
 import 'package:unilag_lecturer_app/view/screens/bottom_navigation_bar/bottom_nav_bar.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/course_content/course_content.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/dashboard/dashboard.dart';
+import 'package:unilag_lecturer_app/view/screens/course_content/course_content.dart';
+import 'package:unilag_lecturer_app/view/screens/dashboard/dashboard.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/logo.dart';
 
 class LecturerLogin extends StatelessWidget {

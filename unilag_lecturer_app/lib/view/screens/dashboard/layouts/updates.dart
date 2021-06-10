@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/dashboard/widgets/item.dart';
+import 'package:unilag_lecturer_app/view/screens/dashboard/widgets/item.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/headline_text.dart';
 
 

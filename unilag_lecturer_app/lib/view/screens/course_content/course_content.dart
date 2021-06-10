@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:unilag_lecturer_app/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/course_content/tabs/classroom/classroom.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/course_content/tabs/content/content.dart';
+import 'package:unilag_lecturer_app/view/screens/course_content/tabs/classroom/classroom.dart';
+import 'package:unilag_lecturer_app/view/screens/course_content/tabs/content/content.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/appbar.dart';
 
 class LecturerCourseContent extends StatefulWidget {

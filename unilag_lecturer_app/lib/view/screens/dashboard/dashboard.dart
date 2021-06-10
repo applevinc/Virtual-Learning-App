@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/dashboard/layouts/updates.dart';
+import 'package:unilag_lecturer_app/view/screens/dashboard/layouts/updates.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/appbar.dart';
-import 'package:unilag_lecturer_app/view/screens/widgets/lecture_timeline.dart';
+import 'package:unilag_lecturer_app/view/screens/dashboard/layouts/lecture_timeline.dart';
 import 'package:unilag_lecturer_app/view/theme/colors.dart';
 
 
@@ -32,7 +32,7 @@ class _Body extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.only(bottom: 20),
       children: [
-        LectureTimeLine(user: 'Lecturer'),
+        TimeLine(),
         SizedBox(height: 20),
         Updates('Chats'),
         SizedBox(height: 20),

@@ -6,19 +6,15 @@ import 'package:unilag_lecturer_app/view/screens/widgets/form_textfield.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/headline_text.dart';
 import 'package:unilag_lecturer_app/view/theme/colors.dart';
 
-
 var _now = DateTime.now();
 var _date = '${DateFormat('EE, d MMM, yyyy').format(_now)}';
 String _time = DateFormat.jm().format(_now);
 TimeOfDay _timeOfDay = TimeOfDay.now();
 
-class LectureTimeLine extends StatelessWidget {
-  const LectureTimeLine({
+class TimeLine extends StatelessWidget {
+  const TimeLine({
     Key key,
-    @required this.user,
   }) : super(key: key);
-
-  final String user;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +28,7 @@ class LectureTimeLine extends StatelessWidget {
           SizedBox(height: 10),
           SizedBox(
             height: 110,
-            child: (user == 'Lecturer') ? _AddEventTimeLine() : _ListViewTimeLine(),
+            child: _AddEventTimeLine(),
           ),
         ],
       ),
@@ -209,24 +205,6 @@ class _SelectTime extends StatelessWidget {
   }
 }
 
-class _ListViewTimeLine extends StatelessWidget {
-  const _ListViewTimeLine({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.only(right: 10, left: 10),
-      itemCount: 4,
-      itemBuilder: (context, index) {
-        return LectureTimeLineItem(index: index);
-      },
-    );
-  }
-}
-
 class _TodayTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -252,8 +230,26 @@ class _TodayTime extends StatelessWidget {
   }
 }
 
-class LectureTimeLineItem extends StatelessWidget {
-  const LectureTimeLineItem({
+class _ListViewTimeLine extends StatelessWidget {
+  const _ListViewTimeLine({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.only(right: 10, left: 10),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return _TimeLineItem(index: index);
+      },
+    );
+  }
+}
+
+class _TimeLineItem extends StatelessWidget {
+  const _TimeLineItem({
     Key key,
     this.index,
   }) : super(key: key);

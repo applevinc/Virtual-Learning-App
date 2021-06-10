@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unilag_lecturer_app/view/screens/lecturer/course_content/tabs/content/layouts/add_new_content.dart';
+import 'package:unilag_lecturer_app/view/screens/course_content/tabs/content/layouts/add_new_content.dart';
 import 'package:unilag_lecturer_app/view/screens/widgets/pdf.dart';
 
 class CourseContents extends StatelessWidget {
@@ -33,7 +33,6 @@ class CourseContentCard extends StatelessWidget {
       width: double.infinity,
       height: 150,
       child: Card(
-        //margin: EdgeInsets.all(10),
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.all(10.0),
