@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
 
 class Conversationentrybox extends StatelessWidget {
   const Conversationentrybox({

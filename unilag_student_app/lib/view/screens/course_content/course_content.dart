@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/course_content/tabs/classroom/classroom.dart';
-import 'package:virtuallearningapp/view/screens/course_content/tabs/content/content.dart';
-import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
+import 'package:unilag_student_app/view/screens/course_content/tabs/classroom/classroom.dart';
+import 'package:unilag_student_app/view/screens/course_content/tabs/content/content.dart';
+import 'package:unilag_student_app/view/screens/widgets/appbar.dart';
 
 class StudentCourseContent extends StatelessWidget {
   @override

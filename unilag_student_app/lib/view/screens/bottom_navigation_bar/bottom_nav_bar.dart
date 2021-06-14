@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
-import 'package:virtuallearningapp/view/screens/utils/icons.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
+import 'package:unilag_student_app/view/screens/utils/icons.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
+
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({

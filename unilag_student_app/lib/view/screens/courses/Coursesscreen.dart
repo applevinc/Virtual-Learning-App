@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/courses/layouts/course_card.dart';
-import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/screens/courses/layouts/course_card.dart';
+import 'package:unilag_student_app/view/screens/widgets/appbar.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
 
-class CoursesScreen extends StatelessWidget {
+class Courses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

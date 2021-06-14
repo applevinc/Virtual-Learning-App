@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:virtuallearningapp/view/screens/dashboard/layouts/activities.dart';
-import 'package:virtuallearningapp/view/screens/dashboard/layouts/lecture_timeline.dart';
-import 'package:virtuallearningapp/view/screens/widgets/appbar.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/screens/dashboard/layouts/activities.dart';
+import 'package:unilag_student_app/view/screens/dashboard/layouts/lecture_timeline.dart';
+import 'package:unilag_student_app/view/screens/widgets/appbar.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
 
-class StudentDashboard extends StatelessWidget {
+class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

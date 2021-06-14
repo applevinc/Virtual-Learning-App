@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/screens/auth/sign_up.dart';
-import 'package:virtuallearningapp/view/screens/auth/student.dart';
-import 'package:virtuallearningapp/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
-import 'package:virtuallearningapp/view/screens/widgets/button.dart';
-import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
-import 'package:virtuallearningapp/view/theme/custom_theme.dart';
+import 'package:unilag_student_app/services/auth_service.dart';
+import 'package:unilag_student_app/view/screens/auth/login/login.dart';
+import 'package:unilag_student_app/view/screens/auth/register/register.dart';
+import 'package:unilag_student_app/view/screens/bottom_navigation_bar/bottom_nav_bar.dart';
+import 'package:unilag_student_app/view/screens/bottom_navigation_bar/bottom_nav_bar_state.dart';
+import 'package:unilag_student_app/view/screens/courses/Coursesscreen.dart';
+import 'package:unilag_student_app/view/screens/dashboard/dashboard.dart';
+import 'package:unilag_student_app/view/screens/widgets/button.dart';
+import 'package:unilag_student_app/view/screens/widgets/logo.dart';
+import 'package:unilag_student_app/view/theme/custom_theme.dart';
 
 class App extends StatelessWidget {
   @override
@@ -15,10 +19,11 @@ class App extends StatelessWidget {
       builder: (context, orientation, screenType) {
         return MultiProvider(
           providers: [
+            ChangeNotifierProvider(create: (context) => AuthService()),
             ChangeNotifierProvider(create: (_) => BottomNavBarState()),
           ],
           child: MaterialApp(
-            title: 'Unilag Student Learning App',
+            title: 'Unilag Student App',
             debugShowCheckedModeBanner: false,
             theme: CustomTheme.defaultTheme(),
             home: Wrapper(),
@@ -34,8 +39,18 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return either dashboard or firstscreen
-    return FirstScreen();
+    final user = context.watch<AuthService>().loginState;
+
+    if (user == ApplicationLoginState.loggedOut) {
+      return FirstScreen();
+    } else {
+      return BottomNavBar(
+        pages: [
+          Dashboard(),
+          Courses(),
+        ],
+      );
+    }
   }
 }
 
@@ -75,7 +90,7 @@ class _Body extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => StudentLogin()),
+                        MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
                   ),

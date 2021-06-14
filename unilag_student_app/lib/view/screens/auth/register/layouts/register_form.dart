@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/app.dart';
-import 'package:virtuallearningapp/view/screens/widgets/button.dart';
-import 'package:virtuallearningapp/view/screens/widgets/form_textfield.dart';
-
+import 'package:provider/provider.dart';
+import 'package:unilag_student_app/services/auth_service.dart';
+import 'package:unilag_student_app/view/app.dart';
+import 'package:unilag_student_app/view/screens/widgets/button.dart';
+import 'package:unilag_student_app/view/screens/widgets/form_textfield.dart';
 
 class RegisterForm extends StatefulWidget {
-  const RegisterForm({Key key, this.register}) : super(key: key);
-
-  final void Function({String name, String email, String password}) register;
+  const RegisterForm({Key key}) : super(key: key);
 
   @override
   _RegisterFormState createState() => _RegisterFormState();
@@ -21,6 +20,8 @@ class _RegisterFormState extends State<RegisterForm> {
 
   @override
   Widget build(BuildContext context) {
+    final auth = context.watch<AuthService>();
+
     return Form(
       key: formKey,
       child: Padding(
@@ -46,21 +47,23 @@ class _RegisterFormState extends State<RegisterForm> {
             SizedBox(height: 10),
             CustomButton(
               text: 'SIGNUP',
-              onPressed: () {
+              onPressed: () async {
                 if (formKey.currentState.validate()) {
-                  widget.register(
+                  await auth.register(
                     name: _nameController.text,
                     email: _emailController.text,
                     password: _passwordController.text,
                   );
 
-                  Navigator.push(
+                  ScaffoldMessenger.of(context)
+                      .showSnackBar(SnackBar(content: Text('Processing Data')));
+                }
+
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => FirstScreen(),
-                    ),
-                  );
-                }
+                    ));
               },
             ),
           ],

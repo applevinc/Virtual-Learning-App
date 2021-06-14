@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/widgets/pdf.dart';
+import 'package:unilag_student_app/view/screens/widgets/pdf.dart';
 
 class CourseContentCard extends StatelessWidget {
   const CourseContentCard({

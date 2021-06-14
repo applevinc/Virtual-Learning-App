@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/course_content/tabs/content/layouts/course_content_card.dart';
+import 'package:unilag_student_app/view/screens/course_content/tabs/content/layouts/course_content_card.dart';
 
 class WeeklyCourseContents extends StatelessWidget {
   @override

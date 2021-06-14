@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/view/screens/utils/chat_bubble_style.dart';
-import 'package:virtuallearningapp/view/screens/widgets/chats.dart';
-import 'package:virtuallearningapp/view/screens/widgets/chat_msg_entries.dart';
+import 'package:unilag_student_app/view/screens/utils/chat_bubble_style.dart';
+import 'package:unilag_student_app/view/screens/widgets/chat_msg_entries.dart';
+import 'package:unilag_student_app/view/screens/widgets/chats.dart';
+
 
 class Classroom extends StatelessWidget {
   @override

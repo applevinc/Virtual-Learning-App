@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1075461981127",
+    "project_id": "unilag-virtual-learning-app",
+    "storage_bucket": "unilag-virtual-learning-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075461981127:android:354f06c5e4845533e90fe2",
+        "android_client_info": {
+          "package_name": "com.example.unilag_student_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075461981127-i77cjodai35q9lsl182dpl2gui3pml16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4oSBN7w7QvGGsW_NhrAO98Us0F6BlR3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075461981127-i77cjodai35q9lsl182dpl2gui3pml16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:virtuallearningapp/auth/views/register_form.dart';
-import 'package:virtuallearningapp/view/screens/widgets/logo.dart';
+import 'package:unilag_student_app/view/screens/auth/register/layouts/register_form.dart';
+import 'package:unilag_student_app/view/screens/widgets/logo.dart';
+
 
 class SignUp extends StatelessWidget {
   @override

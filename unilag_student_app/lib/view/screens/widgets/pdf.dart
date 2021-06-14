@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
 
 class PDF extends StatelessWidget {
   const PDF({

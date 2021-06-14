@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
-import 'package:virtuallearningapp/view/screens/widgets/headline_text.dart';
-import 'package:virtuallearningapp/view/theme/colors.dart';
+import 'package:unilag_student_app/view/screens/widgets/headline_text.dart';
+import 'package:unilag_student_app/view/theme/colors.dart';
+
 
 var _now = DateTime.now();
 var _date = '${DateFormat('EE, d MMM, yyyy').format(_now)}';
