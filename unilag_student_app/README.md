@@ -1,16 +1,7 @@
 # unilag_student_app
 
-A new Flutter project.
+![WhatsApp Image 2021-10-15 at 10 04 14 PM (3)](https://user-images.githubusercontent.com/67894127/137553471-679c5b8e-d81b-4b94-8cce-98361fe0d332.jpeg)
+![WhatsApp Image 2021-10-15 at 10 04 14 PM (2)](https://user-images.githubusercontent.com/67894127/137553493-5b8e2aae-d056-447c-928f-f617c1156ea3.jpeg)
+![WhatsApp Image 2021-10-15 at 10 04 14 PM (1)](https://user-images.githubusercontent.com/67894127/137553510-4f6d0614-47ce-4c84-8fdb-8a4f1424cd29.jpeg)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2021-10-15 at 10 04 14 PM](https://user-images.githubusercontent.com/67894127/137553519-bf04d2d0-3fbb-4b19-bdb1-22a2b49be77b.jpeg)
